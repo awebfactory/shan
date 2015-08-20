@@ -1,5 +1,5 @@
 {
-  "name": "SHAN Stack Example",
+  "name": "shan",
   "version": "1.0.0",
   "description": "Collect your recipes online.",
   "main": "index.js",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/victorkane/recipe-js-app.git"
+    "url": "https://github.com/awebfactory/shan.git"
   },
   "author": "Victor Kane",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/victorkane/recipe-js-app/issues"
+    "url": "https://github.com/awebfacatory/shan/issues"
   },
-  "homepage": "https://github.com/victorkane/recipe-js-app",
+  "homepage": "https://github.com/awebfacatory/shan",
   "dependencies": {
     "express": "^4.13.0",
     "morgan": "^1.6.0",
