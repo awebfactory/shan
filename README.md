@@ -6,6 +6,6 @@ Example SHAN recipe database app
 
 * npm install
 * gulp dev
-* node server.js
+* npm start (or node server.js)
 
 Integrating my very own recipejs example with Matt Harrison's from his book Hapi.js In Action

@@ -7,6 +7,7 @@ angular.module('shared.recipes.service', [
             $http.get('/api/recipes').then(function (res) {
                 console.log('Grabbed recipes from back-end upon load');
                 recipes = res.data;
+                console.log(recipes);
             }, function (errResponse) {
                 console.error('recipes query error')
             });
