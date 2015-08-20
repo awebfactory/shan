@@ -13,4 +13,14 @@ module.exports = [{
     method: 'GET',
     path: '/api/users',
     handler: Users.find
+}, {
+    method: 'GET',
+    path: '/{param*}',
+    handler: {
+        directory: {
+            path: '.',
+            redirectToSlash: true,
+            index: true
+        }
+    }
 }];
