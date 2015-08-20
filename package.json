@@ -20,7 +20,8 @@
   "homepage": "https://github.com/awebfacatory/shan",
   "dependencies": {
     "hapi": "^9.0.3",
-    "node-uuid": "^1.4.3"
+    "node-uuid": "^1.4.3",
+    "sqlite3": "^3.0.10"
   },
   "devDependencies": {
     "browser-sync": "^2.8.2",
