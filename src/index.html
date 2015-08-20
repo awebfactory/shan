@@ -1,0 +1,33 @@
+<html ng-app="RecipeJSApp">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>RecipeJS</title>
+  <!-- inject:css -->
+  <!-- vendor and ngapp *.css files -->
+  <!-- endinject -->
+</head>
+
+<body>
+
+  <div class="container-fluid">
+    <div ng-controller="HeaderCtrl as headerCtrl" class="jumbotron container" ui-view="header">
+    </div>
+    <div class="row">
+      <div class="col-sm-4 col-sm-offset-1">
+        <div ng-controller="UsersCtrl as usersCtrl" ui-view="users">
+        </div>
+        <div ng-controller="MyRecipesCtrl as myRecipesCtrl" ui-view="myrecipes">
+        </div>
+      </div>
+      <div class="col-sm-6 col-sm-offset-1" ng-controller="RecipesCtrl as recipesCtrl" ui-view="recipes">
+      </div>
+    </div>
+  </div>
+  <!-- inject:js -->
+  <!-- vendor and app *.js files in the proper order -->
+  <!-- endinject -->
+</body>
+
+</html>

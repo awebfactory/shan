@@ -1,0 +1,50 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "Collect your recipes in the RecipeJS app online.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "bower install",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/victorkane/recipe-js-app.git"
+  },
+  "author": "Victor Kane",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/victorkane/recipe-js-app/issues"
+  },
+  "homepage": "https://github.com/victorkane/recipe-js-app",
+  "dependencies": {
+    "express": "^4.13.0",
+    "morgan": "^1.6.0",
+    "serve-static": "^1.10.0",
+    "body-parser": "^1.13.2",
+    "method-override": "^2.3.4",
+    "node-uuid": "^1.4.3"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.8.2",
+    "del": "^1.2.0",
+    "gulp": "^3.9.0",
+    "gulp-cachebust": "0.0.5",
+    "gulp-concat": "^2.6.0",
+    "gulp-inject": "^1.5.0",
+    "gulp-jshint": "^1.11.2",
+    "gulp-ng-html2js": "^0.2.0",
+    "gulp-nodemon": "^2.0.3",
+    "gulp-order": "^1.1.1",
+    "gulp-print": "^1.1.0",
+    "gulp-sass": "^2.0.4",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^1.2.0",
+    "jasmine-core": "^2.3.4",
+    "karma": "^0.12.37",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-jasmine": "^0.3.5",
+    "run-sequence": "^1.1.2"
+  }
+}
