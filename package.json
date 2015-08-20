@@ -19,11 +19,7 @@
   },
   "homepage": "https://github.com/awebfacatory/shan",
   "dependencies": {
-    "express": "^4.13.0",
-    "morgan": "^1.6.0",
-    "serve-static": "^1.10.0",
-    "body-parser": "^1.13.2",
-    "method-override": "^2.3.4",
+    "hapi": "^9.0.3",
     "node-uuid": "^1.4.3"
   },
   "devDependencies": {
