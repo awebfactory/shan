@@ -16,7 +16,7 @@ angular.module('myrecipes', [
             if (myRecipesCtrl.cuser.id) {
                 var theRecipes = RecipeService.listRecipes();
                 myRecipesCtrl.myRecipes = $filter('filter')(theRecipes, {
-                    userid: myRecipesCtrl.cuser.id
+                    user_id: myRecipesCtrl.cuser.id
                 });
             }
             return myRecipesCtrl.cuser.id;
