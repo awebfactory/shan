@@ -12,7 +12,7 @@ angular.module('header', [
         };
         headerCtrl.currentUserName = function () {
             var cuser = UserService.getCurrentUser();
-            return cuser.name;
+            return cuser.full_name;
         };
         var init = function () {
             RecipeService.getRecipes();
