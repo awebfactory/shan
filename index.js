@@ -3,6 +3,7 @@ var Inert = require('inert');
 var Path = require('path');
 var Sqlite3 = require('sqlite3');
 var Jwt = require('hapi-auth-jwt2');
+// Debug
 var jsonwebtoken = require('hapi-auth-jwt2/node_modules/jsonwebtoken');
 
 var db = new Sqlite3.Database('data/recipes.sqlite');
