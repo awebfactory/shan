@@ -4,9 +4,9 @@ Example SHAN recipe database app
 
 ## Global dependencies
 
-* Install [NodeJS](https://nodejs.org/), which includes the Node Package Manager [NPM](https://www.npmjs.com/), by visiting the homepage and clicking on the install button in order to download and install the latest binary for your operating system.
 * Install the DVCS (distributed version control system) [Git](https://git-scm.com/) which also has binary packages for all operating systems on its homepage. Learn Git immediately by reading at least the first three chapters of the free online [Git Book](https://git-scm.com/book/en/v2)
-* And we'll install `bower`, another package manager very commonly used in JavaScript projects.
+* Install [NodeJS](https://nodejs.org/), which includes the Node Package Manager [NPM](https://www.npmjs.com/), by visiting the homepage and clicking on the install button in order to download and install the latest binary for your operating system.
+* Install [bower](http://bower.io/), the front end package manager.
 
 ````
 npm install -g bower
