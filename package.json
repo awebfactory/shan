@@ -20,6 +20,7 @@
   "homepage": "https://github.com/awebfacatory/shan",
   "dependencies": {
     "hapi": "^9.0.3",
+    "hapi-auth-jwt2": "^5.0.3",
     "inert": "^3.0.1",
     "node-uuid": "^1.4.3",
     "sqlite3": "^3.0.10"
