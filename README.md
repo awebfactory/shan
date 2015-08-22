@@ -2,12 +2,12 @@
 
 Example SHAN recipe database app
 
-## Installing a minimum environment toolset
+## Global dependencies
 
 * Install [NodeJS](https://nodejs.org/), which includes the Node Package Manager [NPM](https://www.npmjs.com/), by visiting the homepage and clicking on the install button in order to download and install the latest binary for your operating system.
 * Install the DVCS (distributed version control system) [Git](https://git-scm.com/) which also has binary packages for all operating systems on its homepage. Learn Git immediately by reading at least the first three chapters of the free online [Git Book](https://git-scm.com/book/en/v2)
 
-## Global dependencies for testing throughout the course
+## Global dependencies for testing
 
 Tools local to our app (like the Karma test runner) are automatically included locally when you provision your static server with the `npm install` command (see below). But as we'll see it's convenient to install the karma command-line interface globally as well:
 
@@ -40,6 +40,8 @@ cd shan
   * `sqlite3 data/recipes.sqlite < data/db.sql`
 
 ### Provision and run app
+
+Note: bower front end dependencies will automatically be provisioned via the initial `npm install` command:
 
 ````
 npm install
