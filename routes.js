@@ -9,7 +9,7 @@ module.exports = [{
 }, {
     method: 'GET',
     path: '/api/recipes/{id}',
-    config: { auth: false },
+    config: { auth: 'jwt' },
     handler: Recipes.findOne
 }, {
     method: 'GET',
