@@ -35,3 +35,6 @@ prod
 node_modules
 bower_components
 .DS_Store
+
+# ignore these files cuz...
+_*.js
