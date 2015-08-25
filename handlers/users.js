@@ -13,8 +13,37 @@ exports.find = function (request, reply) {
     });
 };
 
-exports.findOne = function (request, reply) {
+exports.login = function (request, reply) {
+    console.log(request.payload);
+    // find the user by email or username (both unique)
+    this.db.get('SELECT * FROM users WHERE email = ?', [request.payload.email], function (err, result) {
 
+        if (err) {
+            throw err;
+        }
+
+        if (typeof result !== 'undefined') {
+            var bcrypt = require('bcrypt');
+            console.log(result);
+            bcrypt.compare(request.payload.password, result.password, function(err, isValid) {
+               if (err) {
+                   throw err;
+               }
+               if (isValid) {
+                   // actually reply token
+                   reply(result);
+               } else {
+                   reply('Not valid').code(401);
+               }
+            })
+        } else {
+            reply('Not valid').code(401);
+        }
+    })
+    // error if no user
+    // bcompare password
+    // error if not equal
+    // all good: return jwt
 };
 
 exports.create = function (request, reply) {

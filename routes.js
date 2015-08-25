@@ -22,6 +22,11 @@ module.exports = [{
     config: { auth: false },
     handler: Users.create
 }, {
+    method: 'POST',
+    path: '/login',
+    config: { auth: false },
+    handler: Users.login
+}, {
     method: 'GET',
     path: '/{param*}',
     config: { auth: false },
