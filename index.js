@@ -29,12 +29,10 @@ server.bind({
     uuid: uuid
 });
 
-server.register(Inert, function () {});
-
 // user has successfully logged in and is authenticated
 var validate = function (decoded, request, callback) {
     // do your checks to see if the person is valid
-	/*
+    /*
     if (!people[decoded.id]) {
         return callback(null, false);
     } else {
@@ -43,7 +41,7 @@ var validate = function (decoded, request, callback) {
     */
 };
 
-server.register(Jwt, function (err) {
+server.register([Inert, Jwt], function (err) {
 
     if (err) {
         console.log(err);
@@ -56,11 +54,11 @@ server.register(Jwt, function (err) {
             algorithms: ['HS256']
         } // pick a strong algorithm
     });
-});
 
-server.route(require('./routes'));
+    server.route(require('./routes'));
 
-server.start(function () {
+    server.start(function () {
 
-    console.log('Server listening at:', server.info.uri);
+        console.log('Server listening at:', server.info.uri);
+    });
 });
