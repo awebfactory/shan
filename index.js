@@ -7,9 +7,6 @@ var uuid = require('node-uuid');
 
 var db = new Sqlite3.Database('data/recipes.sqlite');
 
-// Debug
-var jsonwebtoken = require('hapi-auth-jwt2/node_modules/jsonwebtoken');
-
 var server = new Hapi.Server({
     connections: {
         routes: {
@@ -24,9 +21,12 @@ server.connection({
     port: 3000
 });
 
+var secret = "NeverShareYourSecret";
+
 server.bind({
     db: db,
-    uuid: uuid
+    uuid: uuid,
+    secret: secret
 });
 
 // user has successfully logged in and is authenticated
@@ -48,7 +48,7 @@ server.register([Inert, Jwt], function (err) {
     }
 
     server.auth.strategy('jwt', 'jwt', true, {
-        key: 'NeverShareYourSecret', // Never Share your secret key
+        key: secret, // Never Share your secret key
         validateFunc: validate, // validate function defined above
         verifyOptions: {
             algorithms: ['HS256']

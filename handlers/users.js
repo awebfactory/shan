@@ -14,7 +14,8 @@ exports.find = function (request, reply) {
 };
 
 exports.login = function (request, reply) {
-    console.log(request.payload);
+    var secret = this.secret;
+    //console.log(request.payload);
     // find the user by email or username (both unique)
     this.db.get('SELECT * FROM users WHERE email = ?', [request.payload.email], function (err, result) {
 
@@ -24,14 +25,15 @@ exports.login = function (request, reply) {
 
         if (typeof result !== 'undefined') {
             var bcrypt = require('bcrypt');
-            console.log(result);
+            //console.log(result);
             bcrypt.compare(request.payload.password, result.password, function(err, isValid) {
                if (err) {
                    throw err;
                }
                if (isValid) {
-                   // actually reply token
-                   reply(result);
+                   var JWT = require('jsonwebtoken');
+                   var token = JWT.sign(result.uuid, secret);
+                   reply(token);
                } else {
                    reply('Not valid').code(401);
                }
