@@ -14,29 +14,34 @@ exports.find = function (request, reply) {
 };
 
 exports.findOne = function (request, reply) {
+	
 };
 
 exports.create = function (request, reply) {
 	
+	var db = this.db;
+	
     var uuid = this.uuid.v1();
-    var password = require('bcrypt').hashSync(request.payload.password, 10);
+    
+    require('bcrypt').hash(request.payload.password, 10, function (err, hash) {
+    	var password = hash
+        var sql = 'INSERT INTO users (uuid, full_name, email, username, password) VALUES (?, ?, ?, ?, ?)';
+        db.run(sql,
+        [
+            uuid,
+            request.payload.full_name,
+            request.payload.email,
+            request.payload.username,
+            password
+        ],
+        function (err) {
+    
+            if (err) {
+                throw err;
+            }
 
-    var sql = 'INSERT INTO users (uuid, full_name, email, username, password) VALUES (?, ?, ?, ?, ?)';
-
-    this.db.run(sql,
-    [
-        uuid,
-        request.payload.full_name,
-        request.payload.email,
-        request.payload.username,
-        password
-    ],
-    function (err) {
-
-        if (err) {
-            throw err;
-        }
-
-        reply({ status: 'ok' });
-    });
+            reply({ status: 'ok' });
+        });
+    })
+    		
 };

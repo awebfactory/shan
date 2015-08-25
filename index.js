@@ -29,14 +29,18 @@ server.bind({
     uuid: uuid
 });
 
+server.register(Inert, function () {});
+
 // user has successfully logged in and is authenticated
 var validate = function (decoded, request, callback) {
     // do your checks to see if the person is valid
+	/*
     if (!people[decoded.id]) {
         return callback(null, false);
     } else {
         return callback(null, true);
     }
+    */
 };
 
 server.register(Jwt, function (err) {
@@ -53,8 +57,6 @@ server.register(Jwt, function (err) {
         } // pick a strong algorithm
     });
 });
-
-server.register(Inert, function () {});
 
 server.route(require('./routes'));
 
