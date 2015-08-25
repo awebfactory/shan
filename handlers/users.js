@@ -18,17 +18,18 @@ exports.findOne = function (request, reply) {
 
 exports.create = function (request, reply) {
 	
-    uuid = this.uuid.v1();
+    var uuid = this.uuid.v1();
+    var password = require('bcrypt').hashSync(request.payload.password, 10);
 
     var sql = 'INSERT INTO users (uuid, full_name, email, username, password) VALUES (?, ?, ?, ?, ?)';
 
     this.db.run(sql,
     [
-        request.payload.uuid,
+        uuid,
         request.payload.full_name,
         request.payload.email,
         request.payload.username,
-        request.payload.password,
+        password
     ],
     function (err) {
 
