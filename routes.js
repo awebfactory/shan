@@ -17,6 +17,11 @@ module.exports = [{
     config: { auth: false },
     handler: Users.find
 }, {
+    method: 'POST',
+    path: '/api/users',
+    config: { auth: false },
+    handler: Users.create
+}, {
     method: 'GET',
     path: '/{param*}',
     config: { auth: false },

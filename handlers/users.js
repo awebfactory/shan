@@ -13,3 +13,29 @@ exports.find = function (request, reply) {
     });
 };
 
+exports.findOne = function (request, reply) {
+};
+
+exports.create = function (request, reply) {
+	
+    uuid = this.uuid.v1();
+
+    var sql = 'INSERT INTO users (uuid, full_name, email, username, password) VALUES (?, ?, ?, ?, ?)';
+
+    this.db.run(sql,
+    [
+        request.payload.uuid,
+        request.payload.full_name,
+        request.payload.email,
+        request.payload.username,
+        request.payload.password,
+    ],
+    function (err) {
+
+        if (err) {
+            throw err;
+        }
+
+        reply({ status: 'ok' });
+    });
+};
