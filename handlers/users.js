@@ -28,7 +28,7 @@ exports.login = function (request, reply) {
                }
                if (isValid) {
                    var JWT = require('jsonwebtoken');
-                   var token = JWT.sign(result.uuid, secret);
+                   var token = JWT.sign({ uuid: result.uuid}, secret);
                    reply(token);
                } else {
                    reply('Not valid').code(401);

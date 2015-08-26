@@ -31,14 +31,17 @@ server.bind({
 
 // user has successfully logged in and is authenticated
 var validate = function (decoded, request, callback) {
-    // do your checks to see if the person is valid
-    /*
-    if (!people[decoded.id]) {
-        return callback(null, false);
-    } else {
-        return callback(null, true);
-    }
-    */
+    // console.log(decoded.uuid);
+    db.get('SELECT * FROM users WHERE uuid = ?', [decoded.uuid], function (err, result) {
+        if (err) {
+            throw err;
+        }
+        if (typeof result === 'undefined') {
+            return callback(null, false);
+        } else {
+            return callback(null, true);
+        }
+    });
 };
 
 server.register([Inert, Jwt], function (err) {
