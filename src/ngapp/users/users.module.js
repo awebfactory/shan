@@ -11,18 +11,22 @@ angular.module('users', [
         usersCtrl.user = {};
         usersCtrl.newuser = {};
         usersCtrl.signin = function () {
-            // if email and password is matched, login ok
-            if (auth) {
-                console.log('User signed in successfully: ', usersCtrl.user);
-                // TODO Set current user
-                usersCtrl.tab = 'off';
-            } else {
-                usersCtrl.tab = 'signup';
-                console.log('No registered user for ', usersCtrl.user);
-            }
+            UserService.login(usersCtrl.user).then(
+                function success(res) {
+                    usersCtrl.tab = 'off';
+                    usersCtrl.user = res.data.user;
+                    console.log('User signed in successfully: ', usersCtrl.user);
+                },
+                function error (res) {
+                    usersCtrl.tab = 'signup';
+                    console.log('Error on signup for', usersCtrl.user);
+                    console.log(res);
+                    alert('Error: ' + res.data);
+                }
+            );
         };
         usersCtrl.signup = function () {
-            if () {
+            if (true) {
                 UserService.addUser(usersCtrl.newuser);
                 console.log('User signed up: ', usersCtrl.newuser)
                     // reset form and model

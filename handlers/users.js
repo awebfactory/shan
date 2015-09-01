@@ -1,7 +1,9 @@
 exports.login = function (request, reply) {
+    //console.log(request.payload);
     var secret = this.secret;
     // find the user by email
     this.db.get('SELECT * FROM users WHERE email = ?', [request.payload.email], function (err, result) {
+        //console.log('Result: ', result);
         if (err) {
             throw err;
         }
@@ -14,7 +16,11 @@ exports.login = function (request, reply) {
                if (isValid) {
                    var JWT = require('jsonwebtoken');
                    var token = JWT.sign({ uuid: result.uuid}, secret);
-                   reply(token);
+                   //reply(token);
+                   reply({
+                       token: token,
+                       user: result
+                   })
                } else {
                    reply('Not valid').code(401);
                }
