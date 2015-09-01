@@ -12,20 +12,17 @@ angular.module('users', [
         usersCtrl.newuser = {};
         usersCtrl.signin = function () {
             // if email and password is matched, login ok
-            var theUsers = UserService.listUsers();
-            //console.log(theUsers);
-            if ((userIndex = _.findIndex(theUsers, usersCtrl.user)) > -1) {
+            if (auth) {
+                console.log('User signed in successfully: ', usersCtrl.user);
+                // TODO Set current user
                 usersCtrl.tab = 'off';
-                UserService.setCurrentUser(theUsers[userIndex]);
-                console.log('User signed in: ', theUsers[userIndex])
             } else {
                 usersCtrl.tab = 'signup';
-                console.log('No registered user for ', usersCtrl.user)
+                console.log('No registered user for ', usersCtrl.user);
             }
         };
         usersCtrl.signup = function () {
-            var theUsers = UserService.listUsers();
-            if (_.findIndex(theUsers, usersCtrl.newuser) < 0) {
+            if () {
                 UserService.addUser(usersCtrl.newuser);
                 console.log('User signed up: ', usersCtrl.newuser)
                     // reset form and model
@@ -34,8 +31,4 @@ angular.module('users', [
                 console.log('Registered user attempted to sign up', usersCtrl.newuser)
             }
         };
-        var init = function () {
-            UserService.getUsers();
-        };
-        init();
     }]);

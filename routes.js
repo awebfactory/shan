@@ -12,11 +12,6 @@ module.exports = [{
     config: { auth: 'jwt' },
     handler: Recipes.findOne
 }, {
-    method: 'GET',
-    path: '/api/users',
-    config: { auth: false },
-    handler: Users.find
-}, {
     method: 'POST',
     path: '/api/users',
     config: { auth: false },
