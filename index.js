@@ -60,8 +60,11 @@ server.register([Inert, Jwt], function (err) {
 
     server.route(require('./routes'));
 
-    server.start(function () {
-
-        console.log('Server listening at:', server.info.uri);
+    server.start(function (err) {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log('Server listening at:', server.info.uri);
+        }
     });
 });

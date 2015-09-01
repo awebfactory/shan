@@ -14,6 +14,11 @@ angular.module('header', [
             var cuser = UserService.getCurrentUser();
             return cuser.full_name;
         };
+        headerCtrl.logout = function () {
+            UserService.logout();
+            //usersCtrl.user = {};
+            //usersCtrl.tab = 'signin';
+        };
         var init = function () {
             RecipeService.getRecipes();
         };
