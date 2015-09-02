@@ -5,10 +5,10 @@ angular.module('recipes', [
     var recipesCtrl = this;
     recipesCtrl.list = function() {
         return RecipeService.listRecipes();
-    }
+    };
 }])
 .directive('recipe', [function() {
     return {
         templateUrl: 'recipes/recipe.tmpl.html'
-    }
+    };
 }]);

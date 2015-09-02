@@ -15,14 +15,14 @@ angular.module('shared.users.service', [
                 store.removeItem(key);
                 console.log('currentUser signed out');
             }
-        }
+        };
         //TODO make reusable filter http://www.java2s.com/Tutorials/AngularJS/AngularJS_Example/Filter/Filter_to_remove_space_and_lowercase_with_regular_expression.htm
         var removeSpacesThenLowercase = function (text) {
             console.log('before: ', text);
             var str = text.replace(/\s+/g, '');
             console.log('after: ', str);
             return str.toLowerCase();
-        }
+        };
         return {
             addUser: function (user) {
                 user.username = removeSpacesThenLowercase(user.full_name);
@@ -50,5 +50,5 @@ angular.module('shared.users.service', [
             getCurrentUser: function () {
                 return currentUser;
             },
-        }
+        };
     }]);

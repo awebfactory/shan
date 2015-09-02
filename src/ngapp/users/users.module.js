@@ -45,10 +45,10 @@ angular.module('users', [
                 if (usersCtrl.tab == 'off') {
                     usersCtrl.tab = 'signin';
                 }
-                console.log('no user logged in')
+                //console.log('no user logged in');
                 return '';
             } else {
-                console.log('user is logged in')
+                //console.log('user is logged in');
                 return usersCtrl.currentUser.email;
             }
         };

@@ -9,7 +9,7 @@ angular.module('shared.recipes.service', [
                 recipes = res.data;
                 console.log(recipes);
             }, function (errResponse) {
-                console.error('recipes query error')
+                console.error('recipes query error');
             });
         };
         this.listRecipes = function () {
