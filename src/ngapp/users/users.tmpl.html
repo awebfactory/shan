@@ -1,4 +1,4 @@
-<ul ng-show="usersCtrl.tab != 'off'" class="nav nav-tabs">
+<ul ng-hide="usersCtrl.currentUserName()" class="nav nav-tabs">
   <li role="presentation" ng-class="usersCtrl.tab == 'signin' ? 'active':'' ">
     <button ng-click="usersCtrl.open('signin')">Sign in</button>
   </li>
