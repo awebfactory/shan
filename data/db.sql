@@ -9,8 +9,9 @@ CREATE TABLE users (
   password varchar(255) NOT NULL,
   token varchar(255)
 );
-INSERT INTO "users" VALUES(1,'bde057a8-95f4-431f-a39f-d34c13cecea9','Victor','victor@example.com',NULL,'1234',NULL);
-INSERT INTO "users" VALUES(2,'bde057a7-9521-431a-b39f-d34c13aecea9','Vicente','vicente@example.com',NULL,'1234',NULL);
+
+INSERT INTO "users" VALUES(12,'ea511c30-5117-11e5-9f19-51b491a215bc','María Kobak','maria@example.com','maríakobak','$2a$10$uy898DZjgyhssRCmfk3YQupIB4Scax9V4a0WG.sLA4lnDKIk3nGq.',NULL);
+INSERT INTO "users" VALUES(13,'14917490-5118-11e5-9f19-51b491a215bc','Susana Kobak','susana@example.com','susanakobak','$2a$10$yJWsk1BHTU5pUkgZ.pkn3ebG5cupN46dY1dIvBsd1I..1ajc8Bsvm',NULL);
 CREATE TABLE "recipes" (
 	`id`	integer NOT NULL PRIMARY KEY AUTOINCREMENT,
 	`uuid`	varchar(255) NOT NULL,
@@ -26,11 +27,11 @@ CREATE TABLE "recipes" (
 	`new`	INTEGER,
 	FOREIGN KEY(`user_id`) REFERENCES users ( id ) ON DELETE NO ACTION ON UPDATE NO ACTION
 );
-INSERT INTO "recipes" VALUES(1,'c5409d4e-15eb-456b-a660-e07b3254bb2d','Baked Beans on Toast',NULL,NULL,NULL,NULL,NULL,NULL,0,1,1);
-INSERT INTO "recipes" VALUES(2,'c5409d4e-15eb-456b-a660-e08c3254bb2d','French Toast',NULL,NULL,NULL,NULL,NULL,NULL,0,1,1);
-INSERT INTO "recipes" VALUES(3,'c5409d4e-15eb-456b-a660-e07b3254cc3e','Sirloin Steak',NULL,NULL,NULL,NULL,NULL,NULL,0,2,1);
-INSERT INTO "recipes" VALUES(4,'c5409d4e-15fc-456b-a660-e07b3254bb2d','Roast Potatoes',NULL,NULL,NULL,NULL,NULL,NULL,0,2,0);
+INSERT INTO "recipes" VALUES(1,'c5409d4e-15eb-456b-a660-e07b3254bb2d','Baked Beans on Toast',NULL,NULL,NULL,NULL,NULL,NULL,0,13,1);
+INSERT INTO "recipes" VALUES(2,'c5409d4e-15eb-456b-a660-e08c3254bb2e','French Toast',NULL,NULL,NULL,NULL,NULL,NULL,0,13,1);
+INSERT INTO "recipes" VALUES(3,'c5409d4e-15eb-456b-a660-e07b3254cc3f','Sirloin Steak',NULL,NULL,NULL,NULL,NULL,NULL,0,12,1);
+INSERT INTO "recipes" VALUES(4,'c5409d4e-15fc-456b-a660-e07b3254bb2w','Roast Potatoes',NULL,NULL,NULL,NULL,NULL,NULL,0,12,0);
 DELETE FROM sqlite_sequence;
-INSERT INTO "sqlite_sequence" VALUES('users',2);
+INSERT INTO "sqlite_sequence" VALUES('users',15);
 INSERT INTO "sqlite_sequence" VALUES('recipes',4);
 COMMIT;
