@@ -8,9 +8,7 @@ Example SHAN recipe database app
 * Install [NodeJS](https://nodejs.org/), which includes the Node Package Manager [NPM](https://www.npmjs.com/), by visiting the homepage and clicking on the install button in order to download and install the latest binary for your operating system.
 * Install [bower](http://bower.io/), the front end package manager.
 
-````
-npm install -g bower
-````
+`npm install -g bower`
 
 ## Quick Start
 
@@ -38,4 +36,5 @@ gulp dev
 npm start (or node index.js)
 ````
 
-In this repo I'm integrating my very own recipejs example with Matt Harrison's from his book Hapi.js In Action
+In this HapiJS based example I'm basing myself on my own ExpressJS based [recipejs example](https://github.com/victorkane/recipe-js) I've used several times in the past, it seems to be a popular example subject these days :) 
+
