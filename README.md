@@ -21,10 +21,17 @@ cd shan
 
 ### Create database
 
+
 * Install command line interface for sqlite
   * `sudo apt-get install sqlite3 libsqlite3-dev`
+  
+From the project document root:
+
 * Create sqlite database
   * `sqlite3 data/recipes.sqlite < data/db.sql`
+* If you wish to save the database to an sql file, simply do:
+  * `sqlite3 data/recipes.sqlite .dump > data/db.sql`
+
 
 ### Provision and run app
 
