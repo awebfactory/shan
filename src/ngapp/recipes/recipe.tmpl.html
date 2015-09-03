@@ -1,1 +1,2 @@
-<li ng-bind="recipe.name" class="title"></li>
+<!--   <li><a ng-href="/recipes/{{recipe.slug}}" ng-bind="recipe.name" class="title"></a></li> -->
+<li><a ui-sref="recipejs.view-recipe({ slug: recipe.slug })" ng-bind="recipe.name" class="title"></a></li> 
