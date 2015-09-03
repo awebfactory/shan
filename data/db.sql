@@ -16,6 +16,7 @@ CREATE TABLE "recipes" (
 	`id`	integer NOT NULL PRIMARY KEY AUTOINCREMENT,
 	`uuid`	varchar(255) NOT NULL,
 	`name`	varchar(255) NOT NULL,
+	`slug`	varchar(255) NOT NULL,
 	`cooking_time`	varchar(255) DEFAULT (NULL),
 	`prep_time`	varchar(255) DEFAULT (NULL),
 	`serves`	int(11) DEFAULT (NULL),
@@ -27,10 +28,10 @@ CREATE TABLE "recipes" (
 	`new`	INTEGER,
 	FOREIGN KEY(`user_id`) REFERENCES users ( id ) ON DELETE NO ACTION ON UPDATE NO ACTION
 );
-INSERT INTO "recipes" VALUES(1,'c5409d4e-15eb-456b-a660-e07b3254bb2d','Baked Beans on Toast',NULL,NULL,NULL,NULL,NULL,NULL,0,13,1);
-INSERT INTO "recipes" VALUES(2,'c5409d4e-15eb-456b-a660-e08c3254bb2e','French Toast',NULL,NULL,NULL,NULL,NULL,NULL,0,13,1);
-INSERT INTO "recipes" VALUES(3,'c5409d4e-15eb-456b-a660-e07b3254cc3f','Sirloin Steak',NULL,NULL,NULL,NULL,NULL,NULL,0,12,1);
-INSERT INTO "recipes" VALUES(4,'c5409d4e-15fc-456b-a660-e07b3254bb2w','Roast Potatoes',NULL,NULL,NULL,NULL,NULL,NULL,0,12,0);
+INSERT INTO "recipes" VALUES(1,'c5409d4e-15eb-456b-a660-e07b3254bb2d','Baked Beans on Toast','baked-beans-on-toast',NULL,NULL,NULL,NULL,NULL,NULL,0,13,1);
+INSERT INTO "recipes" VALUES(2,'c5409d4e-15eb-456b-a660-e08c3254bb2e','French Toast','french-toast',NULL,NULL,NULL,NULL,NULL,NULL,0,13,1);
+INSERT INTO "recipes" VALUES(3,'c5409d4e-15eb-456b-a660-e07b3254cc3f','Sirloin Steak','sirloin-steak',NULL,NULL,NULL,NULL,NULL,NULL,0,12,1);
+INSERT INTO "recipes" VALUES(4,'c5409d4e-15fc-456b-a660-e07b3254bb2w','Roast Potatoes','roast-potatoes',NULL,NULL,NULL,NULL,NULL,NULL,0,12,0);
 DELETE FROM sqlite_sequence;
 INSERT INTO "sqlite_sequence" VALUES('users',15);
 INSERT INTO "sqlite_sequence" VALUES('recipes',4);

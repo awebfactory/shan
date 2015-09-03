@@ -25,6 +25,7 @@
     "inert": "^3.0.1",
     "jsonwebtoken": "^5.0.5",
     "node-uuid": "^1.4.3",
+    "speakingurl": "^6.0.0",
     "sqlite3": "^3.0.10"
   },
   "devDependencies": {
