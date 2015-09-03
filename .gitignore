@@ -4,6 +4,7 @@ logs
 
 # Runtime data
 pids
+*.bak
 *.pid
 *.seed
 *.swp
