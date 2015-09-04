@@ -12,6 +12,11 @@ module.exports = [{
     config: { auth: 'jwt' },
     handler: Recipes.findOne
 }, {
+    method: 'GET',
+    path: '/api/recipes/slug/{slug}',
+    config: { auth: false },
+    handler: Recipes.findOneBySlug
+}, {
     method: 'POST',
     path: '/api/users',
     config: { auth: false },

@@ -1,2 +1,9 @@
-<p>Recipe: </p><li ng-bind="recipesCtrl.recipeBySlug()" class="title"></li>
+<p>Recipe: </p><li ng-bind="recipesCtrl.recipeBySlug()" style="display:none" class="title"></li> 
+<p>{{ recipesCtrl.getRecipeName() }}</p>
+
+<!--
+<ul ng-repeat= "(key, value) in recipoesCtrl.recipeBySlug">
+  <li> {{value}} </li>
+</ul>
+ -->
 <small><a href="#/">Back</a></small>

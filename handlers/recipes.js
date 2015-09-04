@@ -33,3 +33,19 @@ exports.findOne = function (request, reply) {
         }
     });
 };
+
+exports.findOneBySlug = function (request, reply) {
+
+    this.db.get('SELECT * FROM recipes WHERE slug = ?', [request.params.slug], function (err, result) {
+
+        if (err) {
+            throw err;
+        }
+
+        if (typeof result !== 'undefined') {
+            reply(result);
+        } else {
+            reply('Not found').code(404);
+        }
+    });
+};

@@ -3,6 +3,7 @@ angular.module('shared.recipes.service', [
 ])
     .service('RecipeService', ['$http', function ($http) {
         var recipes = [];
+        var currentRecipe = {};
         this.getRecipes = function () {
             $http.get('/api/recipes').then(function (res) {
                 console.log('Grabbed recipes from back-end upon load');
@@ -15,6 +16,33 @@ angular.module('shared.recipes.service', [
         this.listRecipes = function () {
             return recipes;
         };
+        /*
+        this.getRecipeByslug = function (slug) {
+                $http.get('/api/recipes/slug/' + slug).then(function (res) {
+                    console.log('Grabbed recipe from back-end by slug');
+                    currentRecipe = res.data;
+                    console.log(currentRecipe);
+                }, function (errResponse) {
+                    console.error('currentRecipe query error');
+                });
+        };
+        */
+        this.getCurrentRecipe = function(slug) {
+        	if ((typeof currentRecipe.slug === 'undefined') || (currentRecipe.slug != slug)) {
+                $http.get('/api/recipes/slug/' + slug).then(function (res) {
+                    console.log('Grabbed recipe from back-end by slug');
+                    currentRecipe = res.data;
+                    console.log(currentRecipe);
+                }, function (errResponse) {
+                    console.error('currentRecipe query error');
+                });
+            }
+            return currentRecipe;
+        };
+    	this.getCurrentRecipeName = function () {
+    		console.log('name', currentRecipe.name);
+    	    return currentRecipe.name;	
+    	};
         this.addRecipe = function (recipe) {
             recipes.push(recipe);
         };

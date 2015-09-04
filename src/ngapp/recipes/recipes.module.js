@@ -21,8 +21,10 @@ angular.module('recipes', [
         return RecipeService.listRecipes();
     };
     recipesCtrl.recipeBySlug = function() {
-        //console.log('the stateParams: ', $stateParams);
-    	return $stateParams.slug;
+    	return RecipeService.getCurrentRecipe($stateParams.slug);
+    };
+    recipesCtrl.getRecipeName = function() {
+    	return RecipeService.getCurrentRecipeName();
     };
 }])
 .directive('recipe', [function() {
