@@ -4,7 +4,7 @@ angular.module('recipes', [
 .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state('recipejs.view-recipe', {
-        	url:  '/recipes/:slug',
+        	url:  'recipes/:slug',
         	views: {
         		'recipes@': {
         	        templateUrl: "recipes/recipes.view-recipe.tmpl.html",

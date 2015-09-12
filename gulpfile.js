@@ -236,7 +236,7 @@ gulp.task('watch', function () {
     gulp.watch('src/ngapp/**/*.tmpl.html', ['build-templates', 'index-dev']).on('change', browserSync.reload);
     gulp.watch('src/**/*.html', ['index-dev']).on('change', browserSync.reload);
     gulp.watch('src/styles/**/*.scss', ['css-dev']).on('change', browserSync.reload);
-    gulp.watch('server.js', ['dev']).on('change', browserSync.reload);
+    gulp.watch('index.js', ['dev']).on('change', browserSync.reload);
 });
 
 gulp.task('browser-sync', function () {
@@ -249,8 +249,8 @@ gulp.task('browser-sync', function () {
 gulp.task('serve', function (callback) {
     var called = false;
     nodemon({
-            script: 'server.js',
-            watch: 'server.js'
+            script: 'index.js',
+            watch: 'index.js'
         })
         .on('start', function () {
             if (!called) {
