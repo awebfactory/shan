@@ -23,4 +23,9 @@ angular.module('header', [
             RecipeService.getRecipes();
         };
         init();
+    }])
+    .directive('recipePlain', [function() {
+        return {
+            templateUrl: 'header/recipe-plain.tmpl.html'
+        };
     }]);
