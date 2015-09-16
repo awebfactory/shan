@@ -5,7 +5,7 @@ angular.module('header', [
     .controller('HeaderCtrl', ['RecipeService', 'UserService', function (RecipeService, UserService) {
         var headerCtrl = this;
         headerCtrl.message = 'Welcome';
-        headerCtrl.titletext = 'RecipeJS';
+        headerCtrl.titletext = 'RecipeJS Shan';
         headerCtrl.edition = 'First';
         headerCtrl.list = function () {
             return RecipeService.listRecipes();
