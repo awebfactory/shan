@@ -18,6 +18,7 @@ angular.module('recipes.view', [])
     	    return RecipeService.getCurrentRecipe($stateParams.slug);
         };
         recipesViewCtrl.getRecipeName = function() {
-    	    return RecipeService.getCurrentRecipeName();
+    	    return RecipeService.getCurrentRecipeName($stateParams.slug);
         };
+    	RecipeService.getCurrentRecipe($stateParams.slug);
     }]); 
