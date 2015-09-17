@@ -34,6 +34,10 @@ angular.module('shared.recipes.service', [
     		//console.log('name', currentRecipe.name);
     	    return currentRecipe.name;	
     	};
+    	this.getCurrentRecipeSlug = function () {
+    		//console.log('name', currentRecipe.name);
+    	    return currentRecipe.slug;	
+    	};
         this.addRecipe = function (recipe) {
             recipes.push(recipe);
         };

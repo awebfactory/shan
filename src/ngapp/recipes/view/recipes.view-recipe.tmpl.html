@@ -1,6 +1,7 @@
-<p>{{ recipesViewCtrl.getRecipeName() }} name</p>
 
-<ul>
-  <li ng-repeat= "(key, value) in recipesViewCtrl.recipeFromCache()"> {{key}}: {{value}} </li>
-</ul>
+<div>
+  <!--  <p ng-repeat= "(key, value) in recipesViewCtrl.recipeFromCache()"> {{key}}: {{value}} </p> -->
+  <h3 class="recipe-name">Recipe: {{ recipesViewCtrl.getRecipeName() }}</h3>
+  <p class="recipe-slug">Slug: {{ recipesViewCtrl.getRecipeSlug() }}</p>
+</div>
 <small><a href="#/">Back</a></small>
