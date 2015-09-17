@@ -26,6 +26,10 @@ angular.module('shared.recipes.service', [
                 });
             return currentRecipe;
         };
+    	this.getCachedRecipe = function () {
+    		//console.log('cached', currentRecipe);
+    	    return currentRecipe;	
+    	};
     	this.getCurrentRecipeName = function () {
     		//console.log('name', currentRecipe.name);
     	    return currentRecipe.name;	

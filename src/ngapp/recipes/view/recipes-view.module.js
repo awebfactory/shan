@@ -15,8 +15,10 @@ angular.module('recipes.view', [])
         var recipesViewCtrl = this;
     	RecipeService.getCurrentRecipe($stateParams.slug);
         recipesViewCtrl.recipeBySlug = function() {
-        	console.log('hola: ', $stateParams);
     	    return RecipeService.getCurrentRecipe($stateParams.slug);
+        };
+        recipesViewCtrl.recipeFromCache = function() {
+        	return RecipeService.getCachedRecipe();
         };
         recipesViewCtrl.getRecipeName = function() {
     	    return RecipeService.getCurrentRecipeName($stateParams.slug);
