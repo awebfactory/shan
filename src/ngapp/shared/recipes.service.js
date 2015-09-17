@@ -18,8 +18,8 @@ angular.module('shared.recipes.service', [
         };
         this.getCurrentRecipe = function(slug) {
                 $http.get('/api/recipes/slug/' + slug).then(function (res) {
-                    console.log('Grabbed recipe from back-end by slug');
-                    console.log(res.data);
+                    //console.log('Grabbed recipe from back-end by slug');
+                    //console.log(res.data);
                     currentRecipe = res.data;
                 }, function (errResponse) {
                     console.error('currentRecipe query error');

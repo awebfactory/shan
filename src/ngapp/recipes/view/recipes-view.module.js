@@ -13,6 +13,7 @@ angular.module('recipes.view', [])
     })
    .controller('RecipesViewCtrl', ['RecipeService', '$stateParams', function (RecipeService, $stateParams) {
         var recipesViewCtrl = this;
+    	RecipeService.getCurrentRecipe($stateParams.slug);
         recipesViewCtrl.recipeBySlug = function() {
         	console.log('hola: ', $stateParams);
     	    return RecipeService.getCurrentRecipe($stateParams.slug);
@@ -20,5 +21,4 @@ angular.module('recipes.view', [])
         recipesViewCtrl.getRecipeName = function() {
     	    return RecipeService.getCurrentRecipeName($stateParams.slug);
         };
-    	RecipeService.getCurrentRecipe($stateParams.slug);
     }]); 
