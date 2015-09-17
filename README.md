@@ -43,5 +43,12 @@ gulp dev
 npm start (or node index.js)
 ````
 
+or, to use browser-sync on the current browser (will automatically pull up the browser window at port 8080). If slow coming up initially, reload, and then when you save any changes in sass or js files in the `src` directory, gulp will selectively re-process and browser-sync will update the browser automatically via socket.io (no Chrome extension needed) so you don't have to reload each time.
+
+````
+npm install
+gulp dev-watch
+````
+
 In this HapiJS based example I'm basing myself on my own ExpressJS based [recipejs example](https://github.com/victorkane/recipe-js) I've used several times in the past, it seems to be a popular example subject these days :) 
 
