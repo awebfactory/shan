@@ -10,6 +10,8 @@ Example SHAN recipe database app
 
 `npm install -g bower`
 
+`npm install -g gulp`
+
 ## Quick Start
 
 ### Clone repo
