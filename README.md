@@ -1,6 +1,10 @@
 # Introducing the SHAN stack: Sqlite Hapi Angular Node (prestige and honor)
 
-Example SHAN recipe database app
+Very incomplete beginnings of an example SHAN recipe database app
+
+Right now, you can sign up and/or sign in, and the user information is stored in the database. Also, the recipes are listed on the home page from the database.
+
+Useful as an example of building an app on the SHAN.
 
 ## Global dependencies
 
